@@ -13,9 +13,10 @@ Plugin 'VundleVim/Vundle.vim'
 " <============================================>
 " Specify the plugins you want to install here.
 Plugin 'scrooloose/nerdtree'
-Plugin 'w0rp/ale'
+"Plugin 'w0rp/ale'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'posva/vim-vue'
 " We'll come on that later
 " <============================================>
 " All of your Plugins must be added before the following line
@@ -33,15 +34,17 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 " Put the rest of your .vimrc file here
-set number
 set tabstop=4
-autocmd FileType python setlocal tabstop=4
-autocmd FileType cpp setlocal tabstop=4
+set noexpandtab
+set softtabstop=4
+set shiftwidth=4
 set copyindent
 set showmatch
 set background=dark
 colo neuromancer
 syntax on
+autocmd Filetype javascript set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd Filetype vue set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 let g:airline#extensions#ale#enabled = 1
 nmap <silent> <C-k> <plug>(ale-previous-wrap)
 nmap <silent> <C-j> <plug>(ale-next-wrap)
