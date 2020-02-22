@@ -1,3 +1,6 @@
-* Need to install the nerdfont to use for devicons
+* Need to install the mononoki nerdfont to use for devicons
+  * Mac
 `brew tap homebrew/cask-fonts`
 `brew cask install font-mononoki-nerd-font`
+  * Linux
+`git clone https://github.com/ryanoasis/nerd-fonts.git && cd nerd-fonts && ./install.sh mononoki`
