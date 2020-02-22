@@ -8,6 +8,9 @@ source ~/.config/nvim/plugins.vim
 " Remap leader key to ,
 let g:mapleader=','
 
+set encoding=UTF-8
+set guifont=mononoki\ Nerd\ Font:h12
+
 " Disable line numbers
 set nonumber
 
@@ -198,6 +201,10 @@ let g:airline_exclude_preview = 1
 " Enable powerline fonts
 let g:airline_powerline_fonts = 1
 
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
 " Enable caching of syntax highlighting groups
 let g:airline_highlighting_cache = 1
 
@@ -259,11 +266,11 @@ set winbl=10
 "
 " Add custom highlights in method that is executed every time a colorscheme is sourced
 " See https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f for details
-function! TrailingSpaceHighlights() abort
+"function! TrailingSpaceHighlights() abort
   " Hightlight trailing whitespace
-  highlight Trail ctermbg=red guibg=red
-  call matchadd('Trail', '\s\+$', 100)
-endfunction
+"  highlight Trail ctermbg=red guibg=red
+"  call matchadd('Trail', '\s\+$', 100)
+" endfunction
 
 function! s:custom_jarvis_colors()
   " coc.nvim color changes
@@ -291,14 +298,14 @@ function! s:custom_jarvis_colors()
   hi SignifySignDelete guibg=NONE
   hi SignifySignChange guibg=NONE
 
-  " Highlight git change signs
+  "Highlight git change signs
   hi SignifySignAdd guifg=#99c794
   hi SignifySignDelete guifg=#ec5f67
   hi SignifySignChange guifg=#c594c5
 endfunction
 
-autocmd! ColorScheme * call TrailingSpaceHighlights()
-autocmd! ColorScheme OceanicNext call s:custom_jarvis_colors()
+"autocmd! ColorScheme * call TrailingSpaceHighlights()
+autocmd! ColorScheme monokai_pro call s:custom_jarvis_colors()
 
 " Call method on window enter
 augroup WindowManagement
@@ -313,12 +320,13 @@ function! Handle_Win_Enter()
   endif
 endfunction
 
+colorscheme monokai_pro
 " Editor theme
-set background=dark
+"set background=dark
 "try
   "colorscheme OceanicNext
 "catch
-  colorscheme slate
+  "colorscheme slate
 "endtry
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "

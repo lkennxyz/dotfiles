@@ -84,5 +84,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+" Theme
+Plug 'sheerun/vim-polyglot'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'ryanoasis/vim-devicons'
+
 " Initialize plugin system
 call plug#end()
