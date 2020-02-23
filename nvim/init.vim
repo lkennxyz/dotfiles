@@ -258,7 +258,7 @@ set splitbelow
 set noshowmode
 
 " Set floating window to be slightly transparent
-set winbl=10
+"set winbl=10
 
 " ============================================================================ "
 " ===                      CUSTOM COLORSCHEME CHANGES                      === "

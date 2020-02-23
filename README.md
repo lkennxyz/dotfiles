@@ -3,4 +3,4 @@
 `brew tap homebrew/cask-fonts`
 `brew cask install font-mononoki-nerd-font`
   * Linux
-`git clone https://github.com/ryanoasis/nerd-fonts.git && cd nerd-fonts && ./install.sh mononoki`
+`git clone --depth=1 https://github.com/ryanoasis/nerd-fonts.git && cd nerd-fonts && ./install.sh Mononoki`
