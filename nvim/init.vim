@@ -306,6 +306,7 @@ endfunction
 
 "autocmd! ColorScheme * call TrailingSpaceHighlights()
 autocmd! ColorScheme monokai_pro call s:custom_jarvis_colors()
+set background=dark
 
 " Call method on window enter
 augroup WindowManagement
@@ -322,12 +323,7 @@ endfunction
 
 colorscheme monokai_pro
 " Editor theme
-"set background=dark
-"try
-  "colorscheme OceanicNext
-"catch
-  "colorscheme slate
-"endtry
+set background=dark
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
 " ============================================================================ "
