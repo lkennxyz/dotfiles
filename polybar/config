@@ -1,0 +1,154 @@
+{;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains a lot of information
+;
+;=====================================================
+; find icon name : fc-match -a |grep -i Material
+; to find icon: xfd -fa MaterialIcons,
+; echo "\ueXXX" to print and paste here
+
+[colors]
+background = ${xrdb:background}
+foreground = ${xrdb:foreground}
+color1 = ${xrdb:color1}
+color2 = ${xrdb:color2}
+color3 = ${xrdb:color3}
+color4 = ${xrdb:color4}
+
+[bar/x]
+width = 100%
+height = 24
+radius = 0.0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #f00
+
+border-size = 6
+border-color = ${colors.background}
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = mononoki Nerd Font Mono:pixelsize=11;2
+
+;wm-restack = i3
+;override-redirect = true
+
+modules-left = i3
+modules-center = xwindow
+modules-right = wlan battery date
+
+tray-position = right
+tray-padding = 2
+
+[module/i3]
+type = internal/i3
+enable-click = true
+format = <label-state> <label-mode>
+pin-workspaces = true
+index-sort = true
+wrapping-scroll = false
+
+
+label-mode-padding = 1
+label-mode-font = 6
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.background}
+
+label-focused = %name%
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.background}
+label-focused-underline = ${colors.color1}
+label-focused-font = 0
+label-focused-padding = 1
+
+label-unfocused = %name%
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-background = ${colors.background}
+label-unfocused-font = 0
+label-unfocused-padding = 1
+
+label-urgent = %name%
+label-urgent-foreground = ${colors.foreground}
+label-urgent-background = ${colors.background}
+label-urgent-font = 0
+label-urgent-padding = 1
+
+label-visible = %name%
+label-visible-foreground = ${colors.foreground}
+label-visible-font = 0
+label-visible-padding = 1
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/wlan]
+type = internal/network
+interface = enp0s5
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %ifname%
+
+format-disconnected = <label-disconnected>
+label-disconnected = 
+label-disconnected-foreground = ${colors.foreground}
+
+ramp-signal-0 = 
+;ramp-signal-foreground = ${colors.foreground}
+
+[module/battery]
+
+type = internal/battery
+battery = BAT0
+adapter = AC
+
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+
+format-full-prefix = 
+format-full-prefix-foreground = ${colors.foreground}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+;ramp-capacity-foreground = ${colors.foreground}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+;animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
+
+[module/date]
+type = internal/date
+interval = 5
+
+format =  <label>
+
+date = %Y-%m-%d%
+
+time = %H:%M
+
+label = %date% %time%
+
+[settings]
+screenchange-reload = true
+compositing-background = xor
+compositing-foreground = source
