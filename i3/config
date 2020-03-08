@@ -165,4 +165,4 @@ bindsym $mod+r mode "resize"
 #
 exec_always --no-startup-id sh ~/.fehbg
 #exec_always --no-startup-id xrdb -merge ~/.Xresources
-exec --no-startup-id xrdb -merge ~/.Xresources && polybar x
+exec --no-startup-id xrdb -merge ~/.Xresources && polybar x -r
