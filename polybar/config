@@ -152,6 +152,11 @@ time = %H:%M
 label = %date% %time%
 label-foreground = ${colors.color4}
 
+[module/bus]
+type = "custom/script"
+exec = "node ~/.config/polybar/bus-time-module/index.js"
+tail = true
+
 [settings]
 screenchange-reload = true
 compositing-background = xor
